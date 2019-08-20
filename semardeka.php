@@ -6,7 +6,9 @@ $headers[] = 'Content-Type: application/json';
 $headers[] = 'X-AppVersion: 3.33.1';
 $headers[] = "X-Uniqueid: ac94e5d0e7f3f".rand(111,999);
 $headers[] = 'X-Location: -6,117412,106,153527';
+
 // Menu
+
 echo "=======================\n";
 echo "1. Register (Akun Baru)\n";
 echo "2. Login (Akun Lama)\n";
@@ -92,6 +94,7 @@ $tools = trim(fgets(STDIN));
 			die("ERROR - Nomer belum kedaftar !");
 		}
 	}
+
 function nama()
 	{
 	$ch = curl_init();
@@ -105,6 +108,7 @@ function nama()
 	preg_match_all('~(&bull; (.*?)<br/>&bull; )~', $ex, $name);
 	return $name[2][mt_rand(0, 14) ];
 	}
+
 function curl($url, $fields = null, $headers = null)
     {
         $ch = curl_init();
@@ -128,4 +132,3 @@ function curl($url, $fields = null, $headers = null)
             $httpcode
         );
 	}
-
